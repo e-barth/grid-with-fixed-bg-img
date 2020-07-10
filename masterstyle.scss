@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
+$color1: #222;
+$color2: #fff;
+
+:root {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+* {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  background: $color1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+  padding: 5px;
+  div, a {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    cursor: url(my-cursor.png), auto;
+  }
+}
+
+.text {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  * {
+    color: $color2;
+    text-shadow: 0 0 5px $color1;
+    line-height: 1.2;
+  }
+  h1 span {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.2rem;
+    margin: .5rem;
+  }
+}
+
+.hover-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.content-box {
+  &:hover {
+    transform: scale(.995);
+    transition: .4s ease;
+    .hover-bg {
+      background: rgba(0, 0, 0, 0.4)
+    }
+    .text {
+      transform: scale(1.03);
+      transition: .5s ease;
+      * {
+        text-shadow: 0 0 5px $color2;
+      }
+    }
+  }
+}
+
+div:nth-child(1) {
+  grid-row: span 2;
+}
+div:nth-child(4) {
+  grid-column: span 2;
+}
+div:nth-child(5) {
+  grid-column: span 2;
+}
+div:nth-child(6) {
+  grid-row: span 2;
+}
+div:nth-child(7) {
+  grid-row: span 2;
+}
+div:nth-child(11) {
+  grid-row: span 2;
+}
+div:nth-child(13) {
+  grid-column: span 2;
+}
+div:nth-child(17) {
+  grid-row: span 2;
+}
+div:nth-child(18) {
+  grid-row: span 2;
+}
+div:nth-child(22) {
+  grid-column: span 2;
+}
+div:nth-child(23) {
+  grid-column: span 2;
+}
+
+.bg1 {
+  background-image: url("https://images.pexels.com/photos/3689659/pexels-photo-3689659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bg2 {
+  @extend .bg1;
+  background-image: url("https://images.pexels.com/photos/831622/pexels-photo-831622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+.bg3 {
+  @extend .bg1;
+  background-image: url("https://images.pexels.com/photos/2909077/pexels-photo-2909077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+.bg4 {
+  @extend .bg1;
+  background-image: url("https://images.pexels.com/photos/73873/star-clusters-rosette-nebula-star-galaxies-73873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+.bg5 {
+  @extend .bg1;
+  background-image: url("https://images.pexels.com/photos/732548/pexels-photo-732548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    font-size: 16px;
+  }
+  body {
+   grid-template-columns: repeat(3, 1fr);
+ }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 14px;
+  }
+  body {
+   grid-template-columns: repeat(2, 1fr);
+   grid-auto-rows: 160px;
+ }
+}
